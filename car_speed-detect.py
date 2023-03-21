@@ -4,7 +4,6 @@ import cvzone
 import time
 import math
 from sort import *
-
 FILE_PATH = "C:/Users/itani/Downloads/roi/GitHub_Projects/Calculate_Vehicle_Speed/Videos/traffic.mp4"
 classNames = ["person", "bicycle", "car", "motorbike", "aeroplane", "bus", "train", "truck", "boat",
               "traffic light", "fire hydrant", "stop sign", "parking meter", "bench", "bird", "cat",
@@ -36,13 +35,12 @@ last_centroids = {}
 current_centroids = {}
 starter = {}
 ender = {}
-frame_counter = 0
 
 while True:
     _, img = cap.read()
     if not _:
         break
-    
+
     results = model(img, stream=True)
     detections = np.empty((0,5))
 
@@ -68,7 +66,6 @@ while True:
     cv2.line(img, (limitsDown[0], limitsDown[1]), (limitsDown[2], limitsDown[3]), (0, 0, 255), 5)
 
     for res in resultTracker:
-        frame_counter+=1
         x1,y1,x2,y2,id = res
         x1,y1,x2,y2, id = int(x1), int(y1), int(x2), int(y2), int(id)
         w,h = x2-x1, y2-y1
