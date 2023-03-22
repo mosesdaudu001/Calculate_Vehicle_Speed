@@ -21,3 +21,5 @@ Contact Moses at `mosesdaudu001@gmail.com` for adjustments to suit your needs.
 ### Side Notes:
 1. I used masks to improvve the efficiency of the detector. But as I'm sure that you are already aware that masks are specific to the video and so you would need your own customly made masks.
 2. Please note that I used the object path for my local computer, ensure to use yours to avoid problems
+
+![Header](vehicle@332.jpg)

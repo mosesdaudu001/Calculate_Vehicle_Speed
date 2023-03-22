@@ -57,6 +57,7 @@ while True:
             # Confodence score
             conf = math.ceil(box.conf[0]*100)/100
             if conf > 0.5:
+                cvzone.putTextRect(img, f'{classNames[cls]}', (x2,y2), scale=1, thickness=1, colorR=(0,0,255))
                 currentArray = np.array([x1,y1,x2,y2,conf])
                 detections = np.vstack((detections, currentArray))
 
@@ -70,7 +71,7 @@ while True:
         x1,y1,x2,y2, id = int(x1), int(y1), int(x2), int(y2), int(id)
         w,h = x2-x1, y2-y1
 
-        cvzone.putTextRect(img, f'{id}', (x1,y1), scale=1, thickness=1, colorR=(0,0,255))
+        cvzone.putTextRect(img, f'ID: {id}', (x1,y1), scale=1, thickness=1, colorR=(0,0,255))
         cvzone.cornerRect(img, (x1,y1,w,h), l=9, rt=1, colorR=(255,0,255))
 
         cx, cy = x1 + w // 2, y1 + h // 2
