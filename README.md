@@ -1,6 +1,6 @@
 # Calculate Vehicle Speed In Video
 
-Hi my name is `Moses Daudu` and I am a Machine Learning Engineer.
+Hi my name is `Moses Daudu` 
 
 In this repo, You will see how to calculate vehicles speed in a given video.
 
