@@ -4,7 +4,8 @@ import cvzone
 import time
 import math
 from sort import *
-FILE_PATH = "C:/Users/itani/Downloads/roi/GitHub_Projects/Calculate_Vehicle_Speed/Videos/traffic.mp4"
+FILE_PATH = "Videos/traffic.mp4"
+
 classNames = ["person", "bicycle", "car", "motorbike", "aeroplane", "bus", "train", "truck", "boat",
               "traffic light", "fire hydrant", "stop sign", "parking meter", "bench", "bird", "cat",
               "dog", "horse", "sheep", "cow", "elephant", "bear", "zebra", "giraffe", "backpack", "umbrella",
@@ -16,13 +17,12 @@ classNames = ["person", "bicycle", "car", "motorbike", "aeroplane", "bus", "trai
               "microwave", "oven", "toaster", "sink", "refrigerator", "book", "clock", "vase", "scissors",
               "teddy bear", "hair drier", "toothbrush"
               ]
-# For Mask
-mask = cv2.imread('C:/Users/itani/Downloads/roi/GitHub_Projects/Calculate_Vehicle_Speed/masks/mask_traffic_2.png')
+# Todo - Add Mask To Reduce Compute Resources
 
 # For Tracker
 tracker = Sort(max_age=20, min_hits=3, iou_threshold=0.3)
 cap  = cv2.VideoCapture(FILE_PATH)
-model = YOLO("C:/Users/itani/Downloads/roi/GitHub_Projects/Calculate_Vehicle_Speed/yolo_weights/yolov8n.pt") 
+model = YOLO("yolo_weights/yolov8l.pt") 
 
 # Initialize the coordinates for line which is specific for the video
 limitsUp = [334, 121, 544, 111]
