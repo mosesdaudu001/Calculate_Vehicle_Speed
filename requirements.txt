@@ -1,6 +1,6 @@
 cvzone==1.5.6
 filterpy==1.4.5
-lap==0.4.0
+lap
 matplotlib==3.7.1
 numpy==1.24.2
 opencv_python==4.7.0.72
